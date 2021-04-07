@@ -4,11 +4,16 @@
   "description": "Juego de piedra, papel o tijera contra la máquina",
   "main": "index.html",
   "dependencies": {
+    "@popperjs/core": "^2.9.2",
     "bootstrap": "^5.0.0-beta3"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danatts/PiedraPapelTijera.git"
   },
   "author": "Daniel Arteta",
   "license": "ISC"
