@@ -5,7 +5,7 @@ function obtenerElecciones() {
     let elec_jugador = document.getElementById("elecUsuario").value;
     let elec_maquina = opciones[elec_aleatoria];
 
-    return elec_jugador, elec_maquina;
+    return [elec_jugador, elec_maquina];
 
 }
 
@@ -36,8 +36,7 @@ function encontrarResultado(elec_jugador, elec_maquina) {
 
 }
 
-function prueba() {
-    let a,b = obtenerElecciones();
-    console.log(encontrarResultado("piedra",b));
+function main() {
+    let a = obtenerElecciones();
+    console.log(encontrarResultado(a[0],a[1]));
 }
-    
