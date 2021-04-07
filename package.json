@@ -1,0 +1,15 @@
+{
+  "name": "piedrapapeltijera",
+  "version": "1.0.0",
+  "description": "Juego de piedra, papel o tijera contra la máquina",
+  "main": "index.html",
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Arteta",
+  "license": "ISC"
+}
