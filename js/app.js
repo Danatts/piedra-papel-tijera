@@ -38,5 +38,6 @@ function encontrarResultado(elec_jugador, elec_maquina) {
 
 function main() {
     let a = obtenerElecciones();
-    console.log(encontrarResultado(a[0],a[1]));
+    document.getElementById("elecMaquina").innerHTML = "Yo elijo " + a[1] +
+     "<br>" + encontrarResultado(a[0],a[1]);
 }
