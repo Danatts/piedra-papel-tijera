@@ -9,24 +9,57 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
 
     <!-- Titulo -->
     <title>Piedra, Papel o Tijera</title>
 </head>
 
 <body>
-    <form>
-        <label for="elecUsuario">¿Qué eliges? </label>
-        <select id="elecUsuario" name="elecUsuario">
-            <option value="piedra" selected=>Piedra</option>
-            <option value="papel">Papel</option>
-            <option value="tijera">Tijera</option>
-        </select>
-        <button type="button" onclick="main()">Click</button>
-        <br>
-        <p id="elecMaquina">Hola</p>
-        <p id="resultado"></p>
-    </form>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <span class="navbar-text fs-1">
+                PIEDRA, PAPEL O TIJERA
+            </span>
+        </div>
+    </nav>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <label for="elecUsuario">¿Qué eliges? </label>
+                <br>
+                <select id="elecUsuario" name="elecUsuario">
+                    <option value="piedra" selected=>Piedra</option>
+                    <option value="papel">Papel</option>
+                    <option value="tijera">Tijera</option>
+                </select>
+                <div class="row">
+                    <div class="col-4">
+                    <input class="btn btn-outline-warning botones" type="image" src="img/Piedra.png">
+                </div>
+                    <div class="col-4">
+                    <input class="btn btn-outline-warning botones" type="image" src="img/Papel.png">
+                </div>
+                    <div class="col-4">
+                    <input class="btn btn-outline-warning botones" type="image" src="img/Tijera.png">
+                </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-4 offset-4">
+                    <button class="btn btn-warning btn-lg" type="button" onclick="main()">Click</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 col-md-6">
+                <p id="elecMaquina"></p>
+                <p id="resultado"></p>
+            </div>
+        </div>
+    </div>
 
 
     <!-- JS Script -->
