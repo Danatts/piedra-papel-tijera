@@ -34,41 +34,48 @@
                 <br>
                 <div class="row">
                     <div class="col-4">
-                        <input id="piedra" class="btn btn-outline-warning botones" type="image" src="img/Piedra.png"
+                        <input id="piedra" class="botones jug" type="image" src="img/Piedra.png"
                             onClick="main(this.id)">
                     </div>
                     <div class="col-4">
-                        <input id="papel" class="btn btn-outline-warning botones" type="image" src="img/Papel.png"
+                        <input id="papel" class="botones jug" type="image" src="img/Papel.png"
                             onClick="main(this.id)">
                     </div>
                     <div class="col-4">
-                        <input id="tijera" class="btn btn-outline-warning botones" type="image" src="img/Tijera.png"
+                        <input id="tijera" class="botones jug" type="image" src="img/Tijera.png"
                             onClick="main(this.id)">
                     </div>
+                </div>
+                <br>
+                <div class="row">
+                    <p class="text-center" id="elecJugador"></p>
                 </div>
                 <br>
             </div>
             
             <div class="col-12 col-md-5 offset-md-2 ">
-                <h3 class="text-end">Yo elijo</h3>
+                <h3>Yo elijo</h3>
                 <br>
                 <div class="row">
                     <div class="col-4">
-                        <input id="" class="btn btn-outline-warning botones" disabled type="image" src="img/Piedra.png">
+                        <input id="piedram" class="botones maq" disabled type="image" src="img/Piedra.png">
                     </div>
                     <div class="col-4">
-                        <input id="" class="btn btn-outline-warning botones" disabled type="image" src="img/Papel.png">
+                        <input id="papelm" class="botones maq" disabled type="image" src="img/Papel.png">
                     </div>
                     <div class="col-4">
-                        <input id="" class="btn btn-outline-warning botones" disabled type="image" src="img/Tijera.png">
+                        <input id="tijeram" class="botones maq" disabled type="image" src="img/Tijera.png">
                     </div>
                 </div>
                 <br>
+                <div class="row">
+                    <p class="text-center" id="elecMaquina"></p>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                <p id="elecMaquina" class="text-center"></p>
+                <p id="resultado" class="text-center"></p>
             </div>           
         </div>
     </div>

@@ -37,6 +37,7 @@ function encontrarResultado(elec_jugador, elec_maquina) {
 function main(id_clickeado) {
     let jugador = id_clickeado;
     let maquina = eleccionMaquina();
-    document.getElementById("elecMaquina").innerHTML = "Yo elijo " + maquina +
-        "<br>" + "Tú elijes " + jugador + "<br>" + encontrarResultado(jugador, maquina);
+    document.getElementById("elecMaquina").innerHTML = `Yo elijo ${maquina}`;
+    document.getElementById("elecJugador").innerHTML = `Tú elijes ${jugador}`;
+    document.getElementById("resultado").innerHTML = `${encontrarResultado(jugador, maquina)}`    
 }
