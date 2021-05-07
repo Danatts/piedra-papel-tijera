@@ -1,12 +1,10 @@
-function obtenerElecciones() {
+function eleccionMaquina() {
 
     const opciones = ["piedra", "papel", "tijera"];
-    let elec_aleatoria = Math.floor(Math.random()*opciones.length);
-    let elec_jugador = document.getElementById("elecUsuario").value;
+    let elec_aleatoria = Math.floor(Math.random() * opciones.length);
     let elec_maquina = opciones[elec_aleatoria];
 
-    return [elec_jugador, elec_maquina];
-
+    return elec_maquina;
 }
 
 function encontrarResultado(elec_jugador, elec_maquina) {
@@ -26,9 +24,9 @@ function encontrarResultado(elec_jugador, elec_maquina) {
     let resultados_perdedores = [-2, -1, 3];
     if (resultados_ganadores.includes(diferencia)) {
         resultado = "Gana jugador";
-    }else if (resultados_perdedores.includes(diferencia)){
+    } else if (resultados_perdedores.includes(diferencia)) {
         resultado = "Gana máquina";
-    }else{
+    } else {
         resultado = "Empate";
     }
 
@@ -36,8 +34,9 @@ function encontrarResultado(elec_jugador, elec_maquina) {
 
 }
 
-function main() {
-    let a = obtenerElecciones();
-    document.getElementById("elecMaquina").innerHTML = "Yo elijo " + a[1] +
-     "<br>" + encontrarResultado(a[0],a[1]);
+function main(id_clickeado) {
+    let jugador = id_clickeado;
+    let maquina = eleccionMaquina();
+    document.getElementById("elecMaquina").innerHTML = "Yo elijo " + maquina +
+        "<br>" + "Tú elijes " + jugador + "<br>" + encontrarResultado(jugador, maquina);
 }

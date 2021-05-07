@@ -13,6 +13,9 @@
 
     <!-- Titulo -->
     <title>Piedra, Papel o Tijera</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">  
 </head>
 
 <body>
@@ -26,38 +29,47 @@
     <br>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
-                <label for="elecUsuario">¿Qué eliges? </label>
-                <br>
-                <select id="elecUsuario" name="elecUsuario">
-                    <option value="piedra" selected=>Piedra</option>
-                    <option value="papel">Papel</option>
-                    <option value="tijera">Tijera</option>
-                </select>
-                <div class="row">
-                    <div class="col-4">
-                    <input class="btn btn-outline-warning botones" type="image" src="img/Piedra.png">
-                </div>
-                    <div class="col-4">
-                    <input class="btn btn-outline-warning botones" type="image" src="img/Papel.png">
-                </div>
-                    <div class="col-4">
-                    <input class="btn btn-outline-warning botones" type="image" src="img/Tijera.png">
-                </div>
-                </div>
-                <br>
+            <div class="col-12 col-md-5">
+                <h3>¿Qué eliges?</h3>
                 <br>
                 <div class="row">
-                    <div class="col-4 offset-4">
-                    <button class="btn btn-warning btn-lg" type="button" onclick="main()">Click</button>
+                    <div class="col-4">
+                        <input id="piedra" class="btn btn-outline-warning botones" type="image" src="img/Piedra.png"
+                            onClick="main(this.id)">
+                    </div>
+                    <div class="col-4">
+                        <input id="papel" class="btn btn-outline-warning botones" type="image" src="img/Papel.png"
+                            onClick="main(this.id)">
+                    </div>
+                    <div class="col-4">
+                        <input id="tijera" class="btn btn-outline-warning botones" type="image" src="img/Tijera.png"
+                            onClick="main(this.id)">
                     </div>
                 </div>
-
+                <br>
             </div>
-            <div class="col-12 col-md-6">
-                <p id="elecMaquina"></p>
-                <p id="resultado"></p>
+            
+            <div class="col-12 col-md-5 offset-md-2 ">
+                <h3 class="text-end">Yo elijo</h3>
+                <br>
+                <div class="row">
+                    <div class="col-4">
+                        <input id="" class="btn btn-outline-warning botones" disabled type="image" src="img/Piedra.png">
+                    </div>
+                    <div class="col-4">
+                        <input id="" class="btn btn-outline-warning botones" disabled type="image" src="img/Papel.png">
+                    </div>
+                    <div class="col-4">
+                        <input id="" class="btn btn-outline-warning botones" disabled type="image" src="img/Tijera.png">
+                    </div>
+                </div>
+                <br>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p id="elecMaquina" class="text-center"></p>
+            </div>           
         </div>
     </div>
 
