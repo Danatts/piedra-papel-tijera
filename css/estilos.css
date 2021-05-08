@@ -1,3 +1,6 @@
+body {
+  background-color: #feffb6; }
+
 .botones {
   width: 100%;
   height: 100%;
@@ -9,7 +12,17 @@
   .jug:hover {
     background-color: gold; }
   .jug:active {
+    background-color: gold;
     border-width: 2px; }
 
 .maq {
   border-color: firebrick; }
+
+.texto {
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: bolder; }
+
+.marcador {
+  font-size: 40px;
+  font-weight: bolder; }

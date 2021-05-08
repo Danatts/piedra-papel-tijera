@@ -1,3 +1,6 @@
+let contadorJug = 0;
+let contadorMaq = 0;
+
 function eleccionMaquina() {
 
     const opciones = ["piedra", "papel", "tijera"];
@@ -9,7 +12,7 @@ function eleccionMaquina() {
 
 function encontrarResultado(elec_jugador, elec_maquina) {
 
-    let resultado = "";
+    let resultado = 0;
 
     let asociacion = {
         piedra: 2,
@@ -17,27 +20,51 @@ function encontrarResultado(elec_jugador, elec_maquina) {
         tijera: 5
     };
 
-    let num_jugador = asociacion[elec_jugador];
-    let num_maquina = asociacion[elec_maquina];
-    let diferencia = num_jugador - num_maquina;
     let resultados_ganadores = [-3, 1, 2];
     let resultados_perdedores = [-2, -1, 3];
+
+    let num_jugador = asociacion[elec_jugador];
+    let num_maquina = asociacion[elec_maquina];
+
+    let diferencia = num_jugador - num_maquina;
+
     if (resultados_ganadores.includes(diferencia)) {
-        resultado = "Gana jugador";
+        contadorJug = contadorJug + 1;
+        resultado = 1;
     } else if (resultados_perdedores.includes(diferencia)) {
-        resultado = "Gana máquina";
+        contadorMaq = contadorMaq + 1;
+        resultado = 2;
     } else {
-        resultado = "Empate";
+        resultado = 0;
     }
 
-    return resultado;
+    return [resultado, contadorJug, contadorMaq];
+}
 
+function plasmarResultado(resultado, jugador, maquina) {  
+    switch (resultado[0]) {
+        case 1:
+            document.getElementById("elecJugador").style.color = "green";
+            document.getElementById("elecMaquina").style.color = "red";
+            break;
+        case 2:
+            document.getElementById("elecJugador").style.color = "red";
+            document.getElementById("elecMaquina").style.color = "green";
+            break;
+        case 0:
+            document.getElementById("elecJugador").style.color = "orange";
+            document.getElementById("elecMaquina").style.color = "orange";
+            break;
+    }
+
+    document.getElementById("elecMaquina").innerHTML = maquina;
+    document.getElementById("elecJugador").innerHTML = jugador;
+    document.getElementById("resultado").innerHTML = `${resultado[1]} - ${resultado[2]}`
 }
 
 function main(id_clickeado) {
     let jugador = id_clickeado;
     let maquina = eleccionMaquina();
-    document.getElementById("elecMaquina").innerHTML = `Yo elijo ${maquina}`;
-    document.getElementById("elecJugador").innerHTML = `Tú elijes ${jugador}`;
-    document.getElementById("resultado").innerHTML = `${encontrarResultado(jugador, maquina)}`    
+    let resultado = encontrarResultado(jugador, maquina);
+    plasmarResultado(resultado, jugador, maquina);
 }
