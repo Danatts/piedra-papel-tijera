@@ -95,7 +95,7 @@ function main(id_clickeado) {
     plasmarResultado(resultado, jugador, maquina);
     let jugar_denuevo = verificarResultado(resultado[1], resultado[2]);
     cambiarColor(maquina);
-    setInterval(() => {
+    setTimeout(() => {
         reestablecerColor(maquina);
     }, 180);
     if (jugar_denuevo == true) {
