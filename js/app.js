@@ -79,9 +79,13 @@ function verificarResultado(punt_jugador, punt_maquina){
         document.getElementById("papel").setAttribute('disabled', true);
         document.getElementById("tijera").setAttribute('disabled', true);
         if (punt_jugador == num_rondas) {
-            jugar_denuevo = confirm('Tú ganas \n¿Quiéres jugar de nuevo?');            
+            setTimeout(() => {
+                jugar_denuevo = confirm('Tú ganas \n¿Quiéres jugar de nuevo?');            
+            }, 100);
         }else{
-            jugar_denuevo = confirm('Gano yo \n¿Quiéres jugar de nuevo?');            
+            setTimeout(() => {
+                jugar_denuevo = confirm('Gano yo \n¿Quiéres jugar de nuevo?');            
+            }, 100);
         }
     }
     return jugar_denuevo;
