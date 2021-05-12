@@ -14,7 +14,7 @@ function eleccionMaquina() {
 
 function encontrarResultado(elec_jugador, elec_maquina) {
 
-    let resultado = 0;
+    let resultado;
 
     let asociacion = {
         piedra: 2,
@@ -43,14 +43,13 @@ function encontrarResultado(elec_jugador, elec_maquina) {
     return [resultado, contador_jug, contador_maq];
 }
 
-function cambiarColor(maquina){
+function parpadeoBoton(maquina) {
     document.getElementById(maquina + "m").style.background = "firebrick";
+    setTimeout(() => {
+        document.getElementById(maquina + "m").style.background = "white";
+    },
+        180);
 }
-
-function reestablecerColor(maquina){
-    document.getElementById(maquina + "m").style.background = "white";
-}
-
 function plasmarResultado(resultado, jugador, maquina) {
     switch (resultado[0]) {
         case 1:
@@ -72,21 +71,18 @@ function plasmarResultado(resultado, jugador, maquina) {
     document.getElementById("resultado").innerHTML = `${resultado[1]} - ${resultado[2]}`
 }
 
-function verificarResultado(punt_jugador, punt_maquina){
-    let jugar_denuevo = Boolean;
+function verificarResultado(punt_jugador, punt_maquina) {
+    let jugar_denuevo;
     if (punt_jugador == num_rondas || punt_maquina == num_rondas) {
         document.getElementById("piedra").setAttribute('disabled', true);
         document.getElementById("papel").setAttribute('disabled', true);
         document.getElementById("tijera").setAttribute('disabled', true);
-        if (punt_jugador == num_rondas) {
-            setTimeout(() => {
-                jugar_denuevo = confirm('Tú ganas \n¿Quiéres jugar de nuevo?');            
-            }, 100);
-        }else{
-            setTimeout(() => {
-                jugar_denuevo = confirm('Gano yo \n¿Quiéres jugar de nuevo?');            
-            }, 100);
-        }
+    }
+    if (punt_jugador == num_rondas) {
+        jugar_denuevo = confirm('Tú ganas \n¿Quiéres jugar de nuevo?');
+    } else if (punt_maquina == num_rondas) {
+        jugar_denuevo = confirm('Gano yo \n¿Quiéres jugar de nuevo?');
+
     }
     return jugar_denuevo;
 }
@@ -97,11 +93,8 @@ function main(id_clickeado) {
     let maquina = eleccionMaquina();
     let resultado = encontrarResultado(jugador, maquina);
     plasmarResultado(resultado, jugador, maquina);
+    parpadeoBoton(maquina);
     let jugar_denuevo = verificarResultado(resultado[1], resultado[2]);
-    cambiarColor(maquina);
-    setTimeout(() => {
-        reestablecerColor(maquina);
-    }, 180);
     if (jugar_denuevo == true) {
         window.location.reload();
     }
